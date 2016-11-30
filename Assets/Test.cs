@@ -27,21 +27,26 @@ public class Boss{
 	//魔法攻撃の関数
 	public void Magic(){
 
-		//1回の魔法でmpを5消費する
-		this.mp -= 5;
+		//mpが4以下であれば魔法が使えないとメッセージを表示
+		if (mp <= 4) {
+		    
+			Debug.Log ("MPが足りないので魔法が使えない。");
+
+		//5以上であればmpを5消費して残りのmpを表示する
+		} else if(mp >= 5) {
+			
+			this.mp -= 5;
 
 			Debug.Log ( "魔法攻撃をした。残りのMPは" + mp + "。");
 
-		if (mp <= 5) {
-			
-			Debug.Log ("MPが足りないので魔法が使えない。");
-
 		}
+
+		
 
 	}
 		
-
 }
+
 	
 public class Test : MonoBehaviour {  //スクリプト名とクラス名は同じでなくてはならない
 
